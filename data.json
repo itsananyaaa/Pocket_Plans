@@ -1,0 +1,216 @@
+{
+  "favorites": [
+    {
+      "name": "Test Place",
+      "location": "Test City",
+      "score": 99
+    },
+    {
+      "name": "Urban Coffee Break",
+      "location": "",
+      "score": 75
+    },
+    {
+      "name": "Childrens Lakeside Park",
+      "location": "",
+      "score": 90
+    },
+    {
+      "name": "Fun Forest",
+      "location": "",
+      "score": 90
+    }
+  ],
+  "history": [
+    {
+      "location": "Paris",
+      "vibe": "Romantic",
+      "date": "2026-02-13T22:27:03.709971"
+    },
+    {
+      "location": "Paris",
+      "vibe": "Romantic",
+      "date": "2026-02-13T22:39:08.732126"
+    },
+    {
+      "location": "IRINJALAKUDA",
+      "vibe": "chill",
+      "date": "2026-02-13T22:42:33.597977"
+    },
+    {
+      "location": "THRISSUR",
+      "vibe": "",
+      "date": "2026-02-13T22:46:58.472453"
+    },
+    {
+      "location": "THRISSUR",
+      "vibe": "CHILL",
+      "date": "2026-02-13T22:48:08.185593"
+    },
+    {
+      "location": "chicago",
+      "vibe": "",
+      "date": "2026-02-13T23:09:10.877877"
+    },
+    {
+      "location": "chicago",
+      "vibe": "",
+      "date": "2026-02-13T23:18:53.969585"
+    },
+    {
+      "location": "USa",
+      "vibe": "chill",
+      "date": "2026-02-13T23:25:28.983359"
+    },
+    {
+      "location": "chicago",
+      "vibe": "art",
+      "date": "2026-02-14T00:14:22.176792"
+    },
+    {
+      "location": "kochi ",
+      "vibe": "chill",
+      "date": "2026-02-14T00:59:15.978782"
+    },
+    {
+      "location": "thrissur",
+      "vibe": "chill",
+      "date": "2026-02-14T01:50:13.872910"
+    },
+    {
+      "location": "munnar",
+      "vibe": "chill",
+      "date": "2026-02-14T03:02:28.369876"
+    },
+    {
+      "location": "ooty",
+      "vibe": "relax",
+      "date": "2026-02-14T03:10:13.196271"
+    },
+    {
+      "location": "thrissur",
+      "vibe": "chill",
+      "date": "2026-02-14T03:22:45.955712"
+    },
+    {
+      "location": "chicago",
+      "vibe": "chill",
+      "date": "2026-02-14T03:23:31.089789"
+    },
+    {
+      "location": "chicago",
+      "vibe": "chill",
+      "date": "2026-02-14T03:27:14.936847"
+    },
+    {
+      "location": "thrissur",
+      "vibe": "chill",
+      "date": "2026-02-14T03:27:52.847374"
+    },
+    {
+      "location": "thrissur",
+      "vibe": "chill",
+      "date": "2026-02-14T03:30:42.612537"
+    },
+    {
+      "location": "munnar",
+      "vibe": "chill",
+      "date": "2026-02-14T03:35:45.109963"
+    },
+    {
+      "location": "munnar",
+      "vibe": "chill",
+      "date": "2026-02-14T03:40:55.809914"
+    },
+    {
+      "location": "thrissur",
+      "vibe": "chill",
+      "date": "2026-02-14T03:41:36.247929"
+    },
+    {
+      "location": "kochi",
+      "vibe": "chill",
+      "date": "2026-02-14T03:48:05.664089"
+    },
+    {
+      "location": "Bangalore",
+      "vibe": "chill",
+      "date": "2026-02-14T03:50:02.937468"
+    },
+    {
+      "location": "kochi",
+      "vibe": "chill",
+      "date": "2026-02-14T03:54:40.960852"
+    },
+    {
+      "location": "thrissur",
+      "vibe": "chill",
+      "date": "2026-02-14T04:09:25.312084"
+    },
+    {
+      "location": "munnar",
+      "vibe": "chill",
+      "date": "2026-02-14T04:10:11.910227"
+    },
+    {
+      "location": "paris",
+      "vibe": "relax",
+      "date": "2026-02-14T04:14:24.845639"
+    },
+    {
+      "location": "mumbai",
+      "vibe": "chill",
+      "date": "2026-02-14T04:20:41.813481"
+    },
+    {
+      "location": "paris",
+      "vibe": "chill",
+      "date": "2026-02-14T04:21:07.706857"
+    },
+    {
+      "location": "Tokyo",
+      "vibe": "chill",
+      "date": "2026-02-14T04:25:34.666054"
+    },
+    {
+      "location": "Tokyo",
+      "vibe": "chill",
+      "date": "2026-02-14T04:26:39.809857"
+    },
+    {
+      "location": "Tokyo",
+      "vibe": "chill",
+      "date": "2026-02-14T04:27:23.727843"
+    },
+    {
+      "location": "Tokyo",
+      "vibe": "chill",
+      "date": "2026-02-14T04:27:58.136021"
+    },
+    {
+      "location": "Tokyo",
+      "vibe": "chill",
+      "date": "2026-02-14T04:28:31.846808"
+    },
+    {
+      "location": "munnar",
+      "vibe": "chill",
+      "date": "2026-02-14T04:29:51.413409"
+    },
+    {
+      "location": "chicago",
+      "vibe": "chill",
+      "date": "2026-02-14T04:30:24.615917"
+    },
+    {
+      "location": "chicago",
+      "vibe": "chill",
+      "date": "2026-02-14T04:32:14.960225"
+    },
+    {
+      "location": "munnar",
+      "vibe": "chill",
+      "date": "2026-02-14T04:32:50.086050"
+    }
+  ]
+}
