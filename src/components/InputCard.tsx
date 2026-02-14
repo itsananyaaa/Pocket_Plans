@@ -1,20 +1,21 @@
 import React, { useState } from 'react';
-import { MapPin, Clock, Zap, Sparkles, Wallet } from 'lucide-react';
+import { MapPin, Clock, Zap, Sparkles, Navigation } from 'lucide-react';
 
 interface InputCardProps {
-  onSearch: (data: { location: string; time: string; preference: string; budget: string }) => void;
+  onSearch: (data: { location: string; destination: string; time: string; preference: string; budget: string }) => void;
   isThinking: boolean;
 }
 
 const InputCard: React.FC<InputCardProps> = ({ onSearch, isThinking }) => {
   const [location, setLocation] = useState('');
+  const [destination, setDestination] = useState('');
   const [time, setTime] = useState('30');
   const [preference, setPreference] = useState('');
   const [budget, setBudget] = useState('Budget');
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    onSearch({ location, time, preference, budget });
+    onSearch({ location, destination, time, preference, budget });
   };
 
   const inputStyle = {
@@ -60,11 +61,25 @@ const InputCard: React.FC<InputCardProps> = ({ onSearch, isThinking }) => {
           <MapPin size={20} style={iconStyle} />
           <input
             type="text"
-            placeholder="Where are you? (e.g. Chicago)"
+            placeholder="Starting Location (e.g. Thrissur)"
             value={location}
             onChange={(e) => setLocation(e.target.value)}
             style={inputStyle}
             required
+            onFocus={(e) => e.target.style.borderColor = 'var(--color-primary)'}
+            onBlur={(e) => e.target.style.borderColor = 'var(--color-border)'}
+          />
+        </div>
+
+        {/* Destination Input (Optional) */}
+        <div style={{ position: 'relative' }}>
+          <Navigation size={20} style={iconStyle} />
+          <input
+            type="text"
+            placeholder="Destination (Optional)"
+            value={destination}
+            onChange={(e) => setDestination(e.target.value)}
+            style={inputStyle}
             onFocus={(e) => e.target.style.borderColor = 'var(--color-primary)'}
             onBlur={(e) => e.target.style.borderColor = 'var(--color-border)'}
           />

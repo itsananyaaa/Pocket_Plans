@@ -1,4 +1,3 @@
-import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import Layout from './layout/Layout';
 import Splash from './pages/Splash';
@@ -6,6 +5,7 @@ import Landing from './pages/Landing';
 import Auth from './pages/Auth';
 import Dashboard from './pages/Dashboard';
 import SavedPlans from './pages/SavedPlans';
+import "./App.css"
 
 function App() {
   return (

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Hero from '../components/Hero';
-import { Pin, X, Check, ArrowRight } from 'lucide-react';
+import { X, Check, ArrowRight } from 'lucide-react';
 
 // Detail Modal Component
 const DetailModal: React.FC<{

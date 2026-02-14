@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowLeft, Clock, Star, MapPin, CheckCircle, ChevronDown, ChevronUp, Hexagon, CloudRain, Package, Heart } from 'lucide-react';
+import { ArrowLeft, Clock, MapPin, CheckCircle, Hexagon, CloudRain, Package, Heart } from 'lucide-react';
 
 interface ResultCardProps {
     onBack: () => void;
@@ -19,7 +19,6 @@ interface ResultCardProps {
 }
 
 const ResultCard: React.FC<ResultCardProps> = ({ onBack, onFavorite, data }) => {
-    const [showDetails, setShowDetails] = useState(true);
     const [mounted, setMounted] = useState(false);
 
     useEffect(() => {

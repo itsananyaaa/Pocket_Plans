@@ -201,7 +201,7 @@ def generate_must_take(weather: dict, vibe: str, place_categories: List[str]) ->
 
 # --- Routes ---
 
-@app.post("/recommend", response_model=PlaceResponse)
+@app.post("/recommend", response_model=List[PlaceResponse])
 async def recommend(req: SearchRequest):
     lat, lon = await get_coordinates(req.location)
     if not lat:
@@ -221,7 +221,7 @@ async def recommend(req: SearchRequest):
     places = await get_places(lat, lon, cats)
 
     if not places:
-        return PlaceResponse(
+        return [PlaceResponse(
             name="City Walk",
             distance="0 min walk",
             duration=f"{req.time} Minutes",
@@ -229,13 +229,12 @@ async def recommend(req: SearchRequest):
             score=80,
             weather=f"{weather['condition']}, {int(weather['temp'])}°C",
             must_take=["Comfortable Shoes"]
-        )
+        )]
 
     # Scoring Logic
     scored_places = []
     
     # ML Prediction Context
-    # Map weather condition to model labels if necessary (simple mapping for now)
     model_weather = weather["condition"].lower()
     if "rain" in model_weather: model_weather = "rainy"
     elif "clear" in model_weather or "sun" in model_weather: model_weather = "sunny"
@@ -249,19 +248,8 @@ async def recommend(req: SearchRequest):
         p_cats = p["categories"]
 
         # --- ML Prediction Scoring ---
-        # We predict what type of place the user *should* like given the context
-        # If this place matches that prediction, we boost it.
         try:
-            # Distance in km approx (or just raw meters as model was trained?)
-            # Model trained on arbitrary units, let's assume meters or relative.
-            # Training data had small integers for distance (e.g. 5, 10, 15). 
-            # Our API returns meters (e.g. 500, 2000). Let's scale or just pass RAW if model handled it.
-            # WAIT: Synthetic data had distance 1-30. API returns meters. 
-            # We should normalize. 3000m -> 30 "units" roughly? 
-            # Let's divide by 100 for a rough "walking minute" or "block" equivalent to match synthetic scale.
             dist_metric = p["distance"] / 100 
-            
-            # Rating? API doesn't give rating in this free tier usually, let's assume 4.5
             rating_metric = 4.5 
 
             predicted_type = ml_utils.predict_preferred_type(
@@ -272,8 +260,6 @@ async def recommend(req: SearchRequest):
             )
 
             if predicted_type:
-                # Check if place matches predicted type
-                # predicted types: 'cafe', 'park', 'museum', 'restaurant'
                 is_match = False
                 if predicted_type == 'cafe' and 'catering.cafe' in p_cats: is_match = True
                 if predicted_type == 'park' and 'leisure.park' in p_cats: is_match = True
@@ -281,13 +267,11 @@ async def recommend(req: SearchRequest):
                 if predicted_type == 'restaurant' and 'catering.restaurant' in p_cats: is_match = True
 
                 if is_match:
-                    score += 5  # ML Bonus!
+                    score += 5
                     explanation.append(f"AI suggests {predicted_type}s right now.")
-                    # Log feedback candidacy
                     ml_utils.store_feedback(req.dict(), predicted_type)
         except Exception as e:
             print(f"ML Scoring Error: {e}")
-
 
         # Weather Impact
         if any(x in weather["condition"] for x in ['Rain', 'Snow']):
@@ -331,30 +315,33 @@ async def recommend(req: SearchRequest):
         })
 
     scored_places.sort(key=lambda x: x["score"], reverse=True)
-    best = scored_places[0]
     
-    # Get Music Recommendations
-    music_recs = music_utils.get_music_recommendations(
-        weather["condition"],
-        req.preference,
-        best["categories"]
-    )
+    # Return top 6 recommendations
+    top_picks = scored_places[:6]
+    results = []
 
-    # Get Image
-    place_image = get_placeholder_image(best["categories"])
+    for pick in top_picks:
+        music_recs = music_utils.get_music_recommendations(
+            weather["condition"],
+            req.preference,
+            pick["categories"]
+        )
+        place_image = get_placeholder_image(pick["categories"])
+        
+        results.append(PlaceResponse(
+            name=pick["name"],
+            distance=f"{int(pick['distance'] / 80)} min walk",
+            duration=f"{req.time} Minutes",
+            reason=pick["reason"][:2],
+            score=pick["score"],
+            weather=pick["weather_summary"],
+            must_take=pick["must_take"],
+            alternative=None, # No longer needed for individual cards but keeping model compatible
+            music_recommendations=music_recs,
+            image_url=place_image
+        ))
 
-    return PlaceResponse(
-        name=best["name"],
-        distance=f"{int(best['distance'] / 80)} min walk",
-        duration=f"{req.time} Minutes",
-        reason=best["reason"][:3],
-        score=best["score"],
-        weather=best["weather_summary"],
-        must_take=best["must_take"],
-        alternative=scored_places[1]["name"] if len(scored_places) > 1 else None,
-        music_recommendations=music_recs,
-        image_url=place_image
-    )
+    return results
 
 @app.get("/suggestions")
 def get_suggestions():

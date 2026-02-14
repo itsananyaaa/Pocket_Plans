@@ -19,6 +19,11 @@
       "name": "Fun Forest",
       "location": "",
       "score": 90
+    },
+    {
+      "name": "Unknown Place",
+      "location": "",
+      "score": 90
     }
   ],
   "history": [
@@ -211,6 +216,111 @@
       "location": "munnar",
       "vibe": "chill",
       "date": "2026-02-14T04:32:50.086050"
+    },
+    {
+      "location": "chicago",
+      "vibe": "chill",
+      "date": "2026-02-14T04:59:52.399729"
+    },
+    {
+      "location": "chicago",
+      "vibe": "chill",
+      "date": "2026-02-14T05:00:35.413902"
+    },
+    {
+      "location": "chicago",
+      "vibe": "chill",
+      "date": "2026-02-14T05:08:31.729201"
+    },
+    {
+      "location": "kochi",
+      "vibe": "chill",
+      "date": "2026-02-14T05:09:08.415090"
+    },
+    {
+      "location": "kochi",
+      "vibe": "chill",
+      "date": "2026-02-14T05:17:23.539393"
+    },
+    {
+      "location": "kochi",
+      "vibe": "chill",
+      "date": "2026-02-14T05:20:14.111673"
+    },
+    {
+      "location": "munnar",
+      "vibe": "chill",
+      "date": "2026-02-14T05:36:26.644540"
+    },
+    {
+      "location": "kochi",
+      "vibe": "outdoor",
+      "date": "2026-02-14T05:38:46.734604"
+    },
+    {
+      "location": "munnar",
+      "vibe": "chill",
+      "date": "2026-02-14T05:40:27.257492"
+    },
+    {
+      "location": "ernakulam",
+      "vibe": "chill",
+      "date": "2026-02-14T05:47:23.139110"
+    },
+    {
+      "location": "munnar",
+      "vibe": "chill",
+      "date": "2026-02-14T05:55:28.036367"
+    },
+    {
+      "location": "thrissur",
+      "vibe": "chill",
+      "date": "2026-02-14T06:07:45.750300"
+    },
+    {
+      "location": "thrissur",
+      "vibe": "chill",
+      "date": "2026-02-14T06:14:44.397188"
+    },
+    {
+      "location": "kochi",
+      "vibe": "chill",
+      "date": "2026-02-14T06:17:50.847448"
+    },
+    {
+      "location": "kochi",
+      "vibe": "chill",
+      "date": "2026-02-14T06:21:09.507007"
+    },
+    {
+      "location": "kochi",
+      "vibe": "chill",
+      "date": "2026-02-14T06:24:11.266526"
+    },
+    {
+      "location": "thrissur",
+      "vibe": "chill",
+      "date": "2026-02-14T06:25:33.600814"
+    },
+    {
+      "location": "thrissur",
+      "vibe": "chill",
+      "date": "2026-02-14T06:37:43.592212"
+    },
+    {
+      "location": "thrissur",
+      "vibe": "",
+      "date": "2026-02-14T06:44:47.276754"
+    },
+    {
+      "location": "tcr",
+      "vibe": "",
+      "date": "2026-02-14T06:51:22.978601"
+    },
+    {
+      "location": "thrissur",
+      "vibe": "chill",
+      "date": "2026-02-14T06:53:46.119868"
     }
   ]
 }
