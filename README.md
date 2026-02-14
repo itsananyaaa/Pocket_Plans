@@ -1,4 +1,4 @@
-<p align="center">
+
   <img src="./img.png" alt="Project Banner" width="100%">
 </p>
 
@@ -70,14 +70,12 @@ uvicorn main:app --reload
 
 #### Screenshots (Add at least 3)
 
-![Screenshot1](Add screenshot 1 here with proper name)
-*Main Suggestion Interface*
+<img width="1864" height="962" alt="image" src="https://github.com/user-attachments/assets/2e6b2e91-202e-4bb7-a394-f7b444434b71" />
 
-![Screenshot2](Add screenshot 2 here with proper name)
-*Itinerary Roadmap View*
+<img width="1874" height="848" alt="image" src="https://github.com/user-attachments/assets/a756e210-4c40-4590-85ce-6d87c384ef4d" />
 
-![Screenshot3](Add screenshot 3 here with proper name)
-*Settings and Preferences*
+<img width="1868" height="945" alt="image" src="https://github.com/user-attachments/assets/5aeae5ce-8b8a-4611-89fd-b4847ced8a7f" />
+
 
 #### Diagrams
 
