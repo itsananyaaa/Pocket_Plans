@@ -25,11 +25,11 @@ const SavedPlans: React.FC = () => {
             setIsLoading(true);
             try {
                 // Fetch Favorites
-                const favRes = await fetch('http://127.0.0.1:8001/favorites');
+                const favRes = await fetch(`${import.meta.env.VITE_BACKEND_URL}/favorites`);
                 const favData = await favRes.json();
 
                 // Fetch History
-                const histRes = await fetch('http://127.0.0.1:8001/history');
+                const histRes = await fetch(`${import.meta.env.VITE_BACKEND_URL}/history`);
                 const histData = await histRes.json();
 
                 setFavorites(favData);

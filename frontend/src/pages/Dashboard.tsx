@@ -42,7 +42,7 @@ const Dashboard: React.FC = () => {
     };
 
     useEffect(() => {
-        fetch('http://127.0.0.1:8001/suggestions')
+        fetch(`${import.meta.env.VITE_BACKEND_URL}/suggestions`)
             .then(res => res.json())
             .then(data => setSuggestions(data))
             .catch(err => console.error("Failed to fetch suggestions", err));

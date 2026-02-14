@@ -21,15 +21,12 @@ PORT = 8001
 GEOAPIFY_KEY = "dd38f283afcf48e8a8ee8c1e81102a86"
 OPENWEATHER_KEY = "0b095ed48ae02f8225c238988ebe108d"
 
-origins = [
-    "http://localhost:5173",
-    "http://localhost:3000",
-]
+origins = ["*"]
 
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
-    allow_credentials=True,
+    allow_credentials=False,  # Must be False when using wildcard
     allow_methods=["*"],
     allow_headers=["*"],
 )
