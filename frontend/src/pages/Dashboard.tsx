@@ -42,7 +42,7 @@ const Dashboard: React.FC = () => {
     };
 
     useEffect(() => {
-        fetch(`${import.meta.env.VITE_BACKEND_URL}/suggestions`)
+        fetch(`${import.meta.env.VITE_BACKEND_URL}suggestions`)
             .then(res => res.json())
             .then(data => setSuggestions(data))
             .catch(err => console.error("Failed to fetch suggestions", err));
@@ -113,10 +113,10 @@ const Dashboard: React.FC = () => {
 
         // --- GENERIC API CALL ---
         try {
-            const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/recommend`, {
+            const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}recommend`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(data), 
+                body: JSON.stringify(data),
             });
 
             if (!response.ok) throw new Error('Backend not available');
