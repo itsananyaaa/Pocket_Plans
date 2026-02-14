@@ -113,10 +113,10 @@ const Dashboard: React.FC = () => {
 
         // --- GENERIC API CALL ---
         try {
-            const response = await fetch('http://127.0.0.1:8000/recommend', {
+            const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/recommend`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(data),
+                body: JSON.stringify(data), 
             });
 
             if (!response.ok) throw new Error('Backend not available');
