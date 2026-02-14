@@ -21,14 +21,14 @@ PORT = 8001
 GEOAPIFY_KEY = "dd38f283afcf48e8a8ee8c1e81102a86"
 OPENWEATHER_KEY = "0b095ed48ae02f8225c238988ebe108d"
 
-origins = ["*"]
-
+# CORS Configuration - Allow all origins for public API
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
+    allow_origins=["*"],  # Allow all origins
     allow_credentials=False,  # Must be False when using wildcard
-    allow_methods=["*"],
-    allow_headers=["*"],
+    allow_methods=["*"],  # Allow all HTTP methods
+    allow_headers=["*"],  # Allow all headers
+    expose_headers=["*"],  # Expose all headers to the client
 )
 
 # --- Data Models ---
