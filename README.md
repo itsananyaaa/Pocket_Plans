@@ -1,73 +1,167 @@
-# React + TypeScript + Vite
+<p align="center">
+  <img src="./img.png" alt="Project Banner" width="100%">
+</p>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Pocket Plans 🎯
 
-Currently, two official plugins are available:
+## Basic Details
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Team Name: Immersivea
 
-## React Compiler
+### Team Members
+- Member 1: Annrose PT - Christ College of Engineering
+- Member 2: Ananya Biju - Christ College of Engineering
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Hosted Project Link
+[mention your project hosted link here]
 
-## Expanding the ESLint configuration
+### Project Description
+Pocket Plans is an AI-powered travel roadmap generator that creates structured mini-itineraries based on your mood, time availability, and location. Instead of suggesting just one place, it designs a complete journey plan — including stop sequence, time allocation, food breaks, and optimized routes. It transforms short free time into a curated, smart travel experience.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### The Problem statement
+People often have limited free time but struggle to decide how to spend it meaningfully. Most apps recommend a single place, forcing users to plan everything else themselves — routes, timing, food stops, and sequencing. This leads to decision fatigue, poor time utilization, and missed opportunities to explore nearby experiences efficiently.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### The Solution
+Pocket Plans solves this by using intelligent recommendation logic and real-time APIs to generate a structured travel roadmap instead of a single suggestion. Based on user inputs like mood, available time, and location, the system analyzes nearby places, weather conditions, and ratings to create an optimized sequence of destinations. It allocates time per stop, suggests food breaks, and provides a clear route map — transforming scattered options into a seamless, ready-to-follow mini itinerary.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Technical Details
+
+### Technologies/Components Used
+
+**For Software:**
+- Languages used: Python, JavaScript
+- Frameworks used: FastAPI
+- Libraries used: `requests`, `geopy`, `pydantic`, `python-dotenv`, `uvicorn`
+- Tools used: VS Code, Git, Geoapify Places API, OpenWeatherMap API
+
+---
+
+## Features
+
+- **Context-Aware Recommendations**: Tailors suggestions based on current weather (Boosting indoor spots when raining, parks when clear).
+- **Time-Optimized Scoring**: Prioritizes activities that fit perfectly within your available time window.
+- **Micro-Itinerary Generation**: Calculates distances and estimates time needed for each activity.
+- **Google Maps Integration**: Provides direct navigation links for every recommended spot.
+- **Smart Category Filtering**: Automatically searches for the best Cafes, Restaurants, and Parks in your immediate vicinity.
+
+---
+
+## Implementation
+
+### For Software:
+
+#### Installation
+```bash
+pip install -r requirements.txt
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+#### Run
+```bash
+uvicorn main:app --reload
 ```
+
+---
+
+## Project Documentation
+
+### For Software:
+
+#### Screenshots (Add at least 3)
+
+![Screenshot1](Add screenshot 1 here with proper name)
+*Main Suggestion Interface*
+
+![Screenshot2](Add screenshot 2 here with proper name)
+*Itinerary Roadmap View*
+
+![Screenshot3](Add screenshot 3 here with proper name)
+*Settings and Preferences*
+
+#### Diagrams
+
+**System Architecture:**
+
+![Architecture Diagram](docs/architecture.png)
+*FastAPI server orchestrating requests between Geoapify for geolocation/places and OpenWeatherMap for environmental context.*
+
+**Application Workflow:**
+
+![Workflow](docs/workflow.png)
+*User inputs Location & Time -> Backend Fetches Weather -> Backend Fetches Nearby Places -> Scoring Algorithm sorts results -> Top Recommendation returned.*
+
+---
+
+## Additional Documentation
+
+### For Web Projects with Backend:
+
+#### API Documentation
+
+**Base URL:** `http://127.0.0.1:8000`
+
+##### Endpoints
+
+**POST /suggest**
+- **Description:** Returns the best activity recommendation based on location and time.
+- **Request Body:**
+```json
+{
+  "latitude": 37.7749,
+  "longitude": -122.4194,
+  "time_available": 45
+}
+```
+- **Response:**
+```json
+{
+  "name": "Cafe Mocha",
+  "distance": "0.15 km",
+  "time_needed": "30 mins",
+  "rating": 4.0,
+  "maps_url": "https://www.google.com/maps/search/?api=1&query=Cafe%20Mocha"
+}
+```
+
+---
+
+## AI Tools Used (Optional - For Transparency Bonus)
+
+**Tool Used:** Antigravity (Google DeepMind)
+
+**Purpose:**
+- Architecting the FastAPI backend structure.
+- Implementing the weighted scoring algorithm for activity recommendations.
+- Refactoring the API integration from Foursquare to Geoapify.
+- Generating unit tests and API verification scripts.
+
+**Key Prompts Used:**
+- "Build a FastAPI backend for Pocket Plans that recommends micro-activities."
+- "Refactor to use Geoapify Places API for better nearby search."
+- "Improve the scoring logic to account for rainy weather and time availability."
+
+**Percentage of AI-generated code:** Approximately 85%
+
+**Human Contributions:**
+- Creative concept and problem statement definition.
+- API provider research and key generation.
+- Frontend vision and user requirement specification.
+- Team coordination and project submission.
+
+---
+
+## Team Contributions
+
+- **Annrose PT**: Frontend development, UI/UX design decisions, and project documentation.
+- **Ananya Biju**: Backend architecture, API integration (Geoapify/Weather), and algorithmic scoring logic.
+
+---
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+Made with ❤️ at TinkerHub
